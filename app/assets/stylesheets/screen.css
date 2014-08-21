@@ -585,3 +585,13 @@ div.field_with_errors input {
 .edit {
 	margin-right: 80px;
 }
+.tags
+{
+	margin-right: 170px;
+}
+.remove
+{
+	position:relative;
+	margin-top: -10px;
+	margin-right: -40px;
+}
