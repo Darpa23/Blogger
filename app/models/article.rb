@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 	has_many :comments
 	has_many :taggings
 	has_many :tags, through: :taggings
+	has_many :article_images
 
 	def tags_list=(tags_string)
 		tag_names= tags_string.split(",").collect { |tag| tag.strip.downcase }.uniq
@@ -15,4 +16,15 @@ class Article < ActiveRecord::Base
 		end.join(", ")
 	end
 
+	def images_array=(images)
+		images.each do |image|
+			self.article_images.create(image: image)
+		end
+	end
+
+	def images_array
+
+	end
+
+	
 end

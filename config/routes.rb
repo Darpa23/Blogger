@@ -2,6 +2,7 @@ Blogger::Application.routes.draw do
 
   root to: "articles#index"
 
+  get 'articles/remove_image' => 'articles#remove_image'
   resources :articles do
     resources :comments
   end

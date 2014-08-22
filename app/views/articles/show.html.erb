@@ -7,6 +7,15 @@
 		<%= link_to tag.name, tag %>
 	<% end %>
 </p>
+<p>
+	<% if @article.article_images.exists? %>
+		</br>
+		</br>
+		<% @article.article_images.each do |a| %>
+			<%= image_tag a.image.url, width: "200px", height: "180px" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<% end %>
+	<% end %>
+</p>
 </br>
 </br>
 <p>

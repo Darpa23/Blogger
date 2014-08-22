@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821090643) do
+ActiveRecord::Schema.define(version: 20140822081502) do
+
+  create_table "article_images", force: true do |t|
+    t.integer  "article_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "article_images", ["article_id"], name: "index_article_images_on_article_id", using: :btree
 
   create_table "articles", force: true do |t|
     t.string   "title"

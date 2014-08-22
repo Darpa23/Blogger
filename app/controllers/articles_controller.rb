@@ -17,7 +17,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@article=Article.create(article_params)	
+		@article=Article.create(article_params)
+		@article.images_array = params[:article][:images_array]	
 		flash.notice="'#{@article.title}' Created!"
 		redirect_to @article
 	end
@@ -35,9 +36,16 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article=Article.find(params[:id])
+		@article.images_array = params[:article][:images_array]
 		@article.update(article_params)
 		flash.notice="'#{@article.title}' Updated!"
 		redirect_to @article
 	end
 
+	def remove_image
+		@article_image=ArticleImage.find(params[:id])
+		article_id=@article_image.article_id
+		@article_image.destroy
+		redirect_to edit_article_path(article_id)
+	end
 end

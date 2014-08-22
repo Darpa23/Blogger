@@ -319,7 +319,7 @@ h1,h2,h3,h4,h5,h6 {
 	background-image:linear-gradient(#ffffff,#cccccc);
 	text-shadow:#fff 0 1px;
 	color:#999999;
-	text-decoration:none
+	text-decoration:none;
 }
 .top-button:hover,a.new_article:hover,.article_actions a[href$='edit']:hover,.article_actions a[data-method='delete']:hover {
 	color:#555
